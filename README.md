@@ -39,7 +39,7 @@ python3 -m pip install pytest playwright pytest-playwright    #macOS
 python3 -m playwright install    # macOS
 ```
 
-## Spuštění testů
+## ▶️ Spuštění testů
 
 1. Spuštění všech testů v projektu:
 
