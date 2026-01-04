@@ -6,7 +6,9 @@ from playwright.sync_api import Page, expect
 def accept_cookies(page: Page):
     page.goto("https://vaspraktikpraha.cz/")
     cookies_banner = page.locator(".cookies-policy-banner")  
-    cookies_banner.locator(".cookies-accept-btn", has_text="POVOLIT VŠE").click()
+    if cookies_banner.is_visible():
+        accept_btn = cookies_banner.locator(".cookies-accept-btn", has_text="POVOLIT VŠE")
+        accept_btn.click()
 
 # Ověření, že po přijetí cookies se banner již nezobrazuje
 def test_cookie_banner_hidden_after_accept(page: Page):
